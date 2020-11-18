@@ -116,8 +116,8 @@ plt.imshow(wordcloud1, interpolation='bilinear')
 plt.axis("off")
 # plt.show()
 
-real_data = data[data["target"] == "true"]
-all_words2 = ''.join([text for text in real_data.text])
+true_data = data[data["target"] == "true"]
+all_words2 = ''.join([text for text in true_data.text])
 wordcloud2 = WordCloud(width=800,
                        height=500,
                        max_font_size=110,
@@ -130,7 +130,7 @@ plt.axis("off")
 ## Most frequent words in fake news
 # counter(data[data["target"] == "fake"], "text", 20)
 # ## Most frequent words in real news
-# counter(data[data["target"] == "real"], "text", 20)
+# counter(data[data["target"] == "true"], "text", 20)
 
 ##Split data
 X_train, X_test, y_train, y_test = model_selection.train_test_split(
